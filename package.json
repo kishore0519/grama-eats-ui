@@ -1,0 +1,23 @@
+{
+  "name": "grama-eats",
+  "version": "1.0.0",
+  "description": "This is Grama Eats the food app",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kishore0519/grama-eats.git"
+  },
+  "keywords": [],
+  "author": "Venkata Kishore Koppolu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kishore0519/grama-eats/issues"
+  },
+  "homepage": "https://github.com/kishore0519/grama-eats#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
