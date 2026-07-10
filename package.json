@@ -2,7 +2,6 @@
   "name": "grama-eats",
   "version": "1.0.0",
   "description": "This is Grama Eats the food app",
-  "main": "App.js",
   "scripts": {
     "test": "jest"
   },
@@ -18,6 +17,14 @@
   },
   "homepage": "https://github.com/kishore0519/grama-eats#readme",
   "devDependencies": {
-    "parcel": "^2.16.4"
-  }
+    "parcel": "^2.16.4",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "browsersList": [
+    "last 2 versions"
+  ]
 }
