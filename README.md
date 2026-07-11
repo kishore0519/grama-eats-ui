@@ -27,6 +27,25 @@ This project is inspired by real-world food delivery platforms and is being deve
 
 🚧 Work in Progress
 
+# Application UI Design
+
+Grama Eats app design planning and development.
+ Header
+  - Logo
+  - Nav Items
+  - Home
+  - Cart
+  - Signin / Signout
+ Body
+  - Search / Search Bar
+  - Restaurant Container
+   - Restaurant Card
+ Footer
+  - Copyright(c)
+  - Links
+  - About
+  - Contact
+
 More features will be added as I progress through the course.
 
 ## 📜 License
