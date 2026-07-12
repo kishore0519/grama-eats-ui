@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./common/Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -16,11 +17,20 @@ const Body = () => {
 
       const json = await data.json();
 
-      setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      // Optional Chaining
+      setListOfRestaurants(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants,
+      );
     } catch (err) {
       console.log(err);
     }
   };
+
+  // Conditional Redenring
+  if (listOfRestaurants.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">
@@ -35,19 +45,20 @@ const Body = () => {
             );
           }}
         >
-          Top Rated Restaurants
+          <span>🔍</span>Top Rated Restaurants
         </button>
       </div>
 
       <div className="res-container">
-        {listOfRestaurants && listOfRestaurants?.map((restaurantData) => {
-          return (
-            <RestaurantCard
-              key={restaurantData?.info?.id}
-              resData={restaurantData}
-            />
-          );
-        })}
+        {listOfRestaurants &&
+          listOfRestaurants?.map((restaurantData) => {
+            return (
+              <RestaurantCard
+                key={restaurantData?.info?.id}
+                resData={restaurantData}
+              />
+            );
+          })}
       </div>
     </div>
   );
