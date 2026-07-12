@@ -1,4 +1,4 @@
-import { imgRootUrl } from "../utils/constants";
+import { RES_CARD_IMG_URL } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
   return (
@@ -7,7 +7,7 @@ const RestaurantCard = ({ resData }) => {
         <img
           className="res-logo"
           alt="restaurant logo"
-          src={imgRootUrl + resData?.info?.cloudinaryImageId}
+          src={RES_CARD_IMG_URL + resData?.info?.cloudinaryImageId}
         />
       </div>
       <div className="res-details">
