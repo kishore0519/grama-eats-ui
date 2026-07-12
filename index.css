@@ -96,6 +96,11 @@ body {
   text-overflow: ellipsis;
 }
 
+.filter-container {
+  display: flex;
+  gap: 20px;
+}
+
 .filter {
   padding: 5px;
   margin: 5px;
@@ -104,7 +109,29 @@ body {
   color: #000;
 }
 
+.search {
+  padding: 5px;
+  margin: 5px;
+  font-weight: 700;
+  color: #000;
+  gap: 20px;
+}
+
 .filter-btn {
+  padding: 10px;
+  margin: 0px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search-input {
+  padding: 10px;
+  margin: 0px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search-btn {
   padding: 10px;
   margin: 0px;
   font-weight: 700;
