@@ -9,11 +9,11 @@ const RestaurantItem = ({ resItems }) => {
                     <div className="veg-dot"></div>
                 </div>
 
-                <h3>{resItems?.name}</h3>
+                <h3 className="res-item-name">{resItems?.name}</h3>
 
-                <p className="price">
+                <h3 className="price">
                     ₹{(resItems?.defaultPrice || resItems?.price) / 100}
-                </p>
+                </h3>
 
                 <p className="rating">
                     ⭐ {resItems?.ratings?.aggregatedRating?.rating}

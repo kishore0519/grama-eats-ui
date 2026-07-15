@@ -4,7 +4,7 @@ const RestaurantInfo = ({ resInfo }) => {
 
     return (
         <div className="menu-section">
-            <h3>{resInfo?.card?.card?.title}</h3>
+            <h3 className="menu-section-title">{resInfo?.card?.card?.title + " ("+ resInfo?.card?.card?.itemCards.length +")"}</h3>
 
             <div className="menu-items">
                 {resInfo?.card?.card?.itemCards.map((itemCard) => (
