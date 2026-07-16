@@ -3,35 +3,19 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./common/Shimmer";
 import { RESTAURANTS_API } from "../utils/constants";
 import { Link } from "react-router-dom";
-import resList from "../mockdata/RestaurantsList";
+import useRestaurantList from "../utils/hooks/useRestaurantList";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const resList = useRestaurantList();
+
   useEffect(() => {
-    fetchRestaurants();
+    setListOfRestaurants(resList);
+    setFilteredRestaurants(resList);
   }, []);
-
-  const fetchRestaurants = async () => {
-    try {
-      const data = await fetch(RESTAURANTS_API);
-
-      const json = await data.json();
-
-      setListOfRestaurants(
-        // json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-        resList
-      );
-      setFilteredRestaurants(
-        // json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants,
-        resList
-      );
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   // Conditional Redenring
   if (filteredRestaurants.length === 0) {
