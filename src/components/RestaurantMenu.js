@@ -9,8 +9,6 @@ const RestaurantMenu = () => {
 
   const { id, name, avgRating, totalRatingsString, areaName, city, cloudinaryImageId, costForTwoMessage, cuisines } = resData?.data?.cards[2]?.card?.card?.info;
 
-  console.log(resData?.data);
-
   return (
     <div className="res-menu">
       <div className="res-menu-container">

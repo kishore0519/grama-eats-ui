@@ -234,6 +234,16 @@ body {
   font-weight: bold;
 }
 
+.user-info-container {
+  
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  margin-left: 300px;
+  gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .contact-us-container {
   text-align: center;
   font-weight: bold;
@@ -416,4 +426,20 @@ body {
 .menu-section-title {
   font-weight: 800;
   font-size: 18px;
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.user-info {
+  width: 400px;
+  min-height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+  background-color: #fff;
 }
