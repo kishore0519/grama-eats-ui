@@ -4,6 +4,7 @@ import Shimmer from "./common/Shimmer";
 import { RESTAURANTS_API } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/hooks/useRestaurantList";
+import useOnlineStatus from "../utils/hooks/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -16,6 +17,12 @@ const Body = () => {
     setListOfRestaurants(resList);
     setFilteredRestaurants(resList);
   }, []);
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return <h1>Please check your internet status...</h1>
+  }
 
   // Conditional Redenring
   if (filteredRestaurants.length === 0) {
