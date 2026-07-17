@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Internal CSS will stay alive util each css will replace with tailwind css */
+
 .header {
   position: sticky;
   top: 0;
@@ -242,11 +248,6 @@ body {
   margin-left: 300px;
   gap: 0;
   grid-template-columns: repeat(3, 1fr);
-}
-
-.contact-us-container {
-  text-align: center;
-  font-weight: bold;
 }
 
 .res-menu {

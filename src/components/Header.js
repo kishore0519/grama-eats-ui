@@ -8,27 +8,43 @@ const Header = () => {
   const [btnName, setBtnName] = useState("login");
 
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" alt="app-logo" src={LOGO_URL}></img>
+    <div className="sticky top-0 z-50 flex items-center justify-between bg-white shadow-sm">
+      <div>
+        <img
+          className="w-52 h-20 object-contain"
+          alt="app-logo"
+          src={LOGO_URL}
+        />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="mr-10 flex items-center">
+        <ul className="flex items-center gap-8">
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              className="text-lg font-semibold text-gray-800 hover:text-orange-500 transition-colors"
+              to="/"
+            >Home</Link>
           </li>
           <li>
-            <Link to="/grocery">Grocery</Link>
+            <Link
+              className="text-lg font-semibold text-gray-800 hover:text-orange-500 transition-colors"
+              to="/grocery"
+            >Grocery</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link
+              className="text-lg font-semibold text-gray-800 hover:text-orange-500 transition-colors"
+              to="/about"
+            >About</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link
+              className="text-lg font-semibold text-gray-800 hover:text-orange-500 transition-colors"
+              to="/contact"
+            >Contact</Link>
           </li>
           <li>Cart</li>
           <button
-            className="login-btn"
+            className="rounded-full bg-gray-300 px-4 py-2 text-lg font-bold hover:bg-gray-400"
             onClick={() => {
               btnName === "login" ? setBtnName("logout") : setBtnName("login");
             }}

@@ -1,8 +1,8 @@
 const ContactUs = () => {
 
-    return(
-        <div className="contact-us-container">
-            <h1>Contact US Page</h1>
+    return (
+        <div className="text-black p-4 text-center text-3xl font-bold">
+            ContactUs Page
         </div>
     );
 }
