@@ -10,33 +10,46 @@ const RestaurantMenu = () => {
   const { id, name, avgRating, totalRatingsString, areaName, city, cloudinaryImageId, costForTwoMessage, cuisines } = resData?.data?.cards[2]?.card?.card?.info;
 
   return (
-    <div className="res-menu">
-      <div className="res-menu-container">
-        <h1 className="res-name">{name}</h1>
+    <div className="flex justify-center bg-gray-100 px-5 py-4">
+      <div className="w-[910px]">
+        <h1 className="pb-2 pl-5 text-3xl font-bold text-gray-900">
+          {name}
+        </h1>
 
         <img
-          className="res-menu-img"
+          className="h-[360px] w-full rounded-3xl object-cover"
           src={RES_MENU_MAIN_IMG + cloudinaryImageId}
           alt={name}
         />
 
-        <div className="res-menu-info">
-          <div className="rating-row">
-            ⭐ <strong>{avgRating}</strong>
+        <div className="mt-2 rounded-2xl border-b border-gray-200 px-4 py-3">
+          <div className="flex items-center gap-2 text-base font-semibold text-gray-900">
+            <span>⭐</span>
+
+            <strong>{avgRating}</strong>
+
             <span>({totalRatingsString})</span>
-            <span className="dot">•</span>
+
+            <span className="text-gray-400">•</span>
+
             <strong>{costForTwoMessage}</strong>
           </div>
 
-          <p className="cuisines">{cuisines.join(", ")}</p>
+          <p className="mt-3 font-semibold text-orange-500">
+            {cuisines.join(", ")}
+          </p>
 
-          <p className="location">
+          <p className="mt-2 text-gray-500">
             {areaName}, {city}
           </p>
         </div>
 
-        <div>
-          <RestaurantInfo resInfo={resData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]}/>
+        <div className="mt-6">
+          <RestaurantInfo
+            resInfo={
+              resData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
+            }
+          />
         </div>
       </div>
     </div>

@@ -42,49 +42,51 @@ const Body = () => {
   };
 
   return (
-    <div className="body">
-      <div className="filter-container">
-        <div className="filter">
-          <button
-            className="filter-btn"
-            onClick={() => {
-              setFilteredRestaurants(
-                listOfRestaurants.filter(
-                  (restaurant) => restaurant?.info?.avgRating > 4,
-                ),
-              );
-            }}
-          >
-            <span>🔍</span>Top Rated Restaurants
-          </button>
-        </div>
-        <div className="search">
+    <div className="bg-gray-50 min-h-screen">
+      {/* Filter Section */}
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-16 py-6">
+        <button
+          className="rounded-lg border border-gray-300 bg-white px-5 py-2 font-semibold shadow-sm transition hover:bg-orange-500 hover:text-white"
+          onClick={() => {
+            setFilteredRestaurants(
+              listOfRestaurants.filter(
+                (restaurant) => restaurant?.info?.avgRating > 4
+              )
+            );
+          }}
+        >
+          🔍 Top Rated Restaurants
+        </button>
+
+        <div className="flex items-center gap-3">
           <input
             type="text"
-            className="search-input"
             value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          ></input>
-          <button className="search-btn" onClick={() => searchRestaurants()}>
+            onChange={(e) => setSearchText(e.target.value)}
+            placeholder="Search restaurants..."
+            className="w-72 rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+          />
+
+          <button
+            onClick={searchRestaurants}
+            className="rounded-lg bg-orange-500 px-5 py-2 font-semibold text-white transition hover:bg-orange-600"
+          >
             Search
           </button>
         </div>
       </div>
 
-      <div className="res-container">
-        {filteredRestaurants &&
-          filteredRestaurants?.map((restaurantData) => {
-            return (
-              <Link to={"/restaurant/" + restaurantData?.info?.id} key={restaurantData?.info?.id}>
-                <RestaurantCard
-                  key={restaurantData?.info?.id}
-                  resData={restaurantData}
-                />
-              </Link>
-            );
-          })}
+      {/* Restaurant Cards */}
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-7 px-16 py-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {filteredRestaurants?.map((restaurantData) => (
+          <Link
+            key={restaurantData?.info?.id}
+            to={"/restaurant/" + restaurantData?.info?.id}
+            className="no-underline"
+          >
+            <RestaurantCard resData={restaurantData} />
+          </Link>
+        ))}
       </div>
     </div>
   );
