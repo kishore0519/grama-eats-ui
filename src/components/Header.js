@@ -10,14 +10,15 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-50 flex items-center justify-between bg-white shadow-sm">
       <div>
-        <img
-          className="w-52 h-20 object-contain"
-          alt="app-logo"
-          src={LOGO_URL}
-        />
+        <Link to="/">
+          <img
+            className="pl-16 w-52 h-20 object-contain"
+            alt="app-logo"
+            src={LOGO_URL}
+          /></Link>
       </div>
       <div className="mr-10 flex items-center">
-        <ul className="flex items-center gap-8">
+        <ul className="flex items-center gap-7">
           <li>
             <Link
               className="text-lg font-semibold text-gray-800 hover:text-orange-500 transition-colors"

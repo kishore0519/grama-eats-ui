@@ -8,27 +8,19 @@ class About extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-    }
-
     render() {
 
         return (
             <div className="py-10 text-center">
-                <h1 className="mb-8 text-4xl font-bold text-gray-900">
-                    About Page
+                <h1 className="text-3xl font-bold text-gray-900">
+                    About
                 </h1>
 
-                <div className="grid grid-cols-3 justify-items-center gap-6">
+                <div className="justify-items-center gap-6">
                     <UserClass
                         name={"Venkata Kishore Koppolu"}
                         location={"Ramanaidu Palli"}
                     />
-
-                    {/* <User
-      name={"Venkata Kishore Koppolu"}
-      location={"Ramanaidu Palli"}
-    /> */}
                 </div>
             </div>
         );
