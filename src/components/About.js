@@ -12,11 +12,11 @@ class About extends React.Component {
 
         return (
             <div className="py-10 text-center">
-                <h1 className="text-3xl font-bold text-gray-900">
+                <h1 className="mb-8 text-3xl font-bold text-gray-900">
                     About
                 </h1>
 
-                <div className="justify-items-center gap-6">
+                <div className="mx-auto flex max-w-6xl justify-center px-4">
                     <UserClass
                         name={"Venkata Kishore Koppolu"}
                         location={"Ramanaidu Palli"}

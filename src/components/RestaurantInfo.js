@@ -6,19 +6,19 @@ const RestaurantInfo = ({ resInfo }) => {
     const [showItems, setShowItems] = useState(true);
 
     return (
-        <div className="mt-4 px-4">
-            <div onClick={() => {
-                setShowItems(!showItems);
-            }} className="mb-4 flex cursor-pointer items-center justify-between">
-
-                <h3 className="text-xl font-bold text-gray-900">
-                    {resInfo?.card?.card?.title} ({resInfo?.card?.card?.itemCards.length})
+        <div className="mt-4 px-2 sm:px-4">
+            <div
+                onClick={() => setShowItems(!showItems)}
+                className="mb-4 flex cursor-pointer items-center justify-between rounded-lg p-3 hover:bg-gray-100"
+            >
+                <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+                    {resInfo?.card?.card?.title} (
+                    {resInfo?.card?.card?.itemCards.length})
                 </h3>
 
-                <span className="text-xl font-bold pr-6">
+                <span className="pr-2 text-xl font-bold sm:pr-6">
                     {showItems ? "⌃" : "⌄"}
                 </span>
-
             </div>
 
             {showItems && (
@@ -29,8 +29,8 @@ const RestaurantInfo = ({ resInfo }) => {
                             resItems={itemCard?.card?.info}
                         />
                     ))}
-                </div>)
-            }
+                </div>
+            )}
         </div>
     );
 }

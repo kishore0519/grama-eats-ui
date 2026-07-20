@@ -20,21 +20,21 @@ const RestaurantMenu = () => {
   }, []);
 
   return (
-    <div className="flex justify-center bg-gray-100 px-5 py-4">
-      <div className="w-[910px]">
+    <div className="flex justify-center bg-gray-100 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-5xl">
 
-        <h1 className="pb-2 pl-5 text-3xl font-bold text-gray-900">
+        <h1 className="pb-3 text-2xl font-bold text-gray-900 sm:pl-5 sm:text-3xl">
           {name}
         </h1>
 
         <img
-          className="h-[360px] w-full rounded-3xl object-cover"
+          className="h-56 w-full rounded-2xl object-cover sm:h-72 lg:h-[360px] lg:rounded-3xl"
           src={RES_MENU_MAIN_IMG + cloudinaryImageId}
           alt={name}
         />
 
-        <div className="mt-2 rounded-2xl border-b border-gray-200 px-4 py-3">
-          <div className="flex items-center gap-2 text-base font-semibold text-gray-900">
+        <div className="mt-3 rounded-2xl border-b border-gray-200 px-4 py-4">
+          <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-gray-900 sm:text-base">
             <span>⭐</span>
 
             <strong>{avgRating}</strong>
@@ -46,21 +46,22 @@ const RestaurantMenu = () => {
             <strong>{costForTwoMessage}</strong>
           </div>
 
-          <p className="mt-3 font-semibold text-orange-500">
+          <p className="mt-3 text-sm font-semibold text-orange-500 sm:text-base">
             {cuisines.join(", ")}
           </p>
 
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-sm text-gray-500 sm:text-base">
             {areaName}, {city}
           </p>
         </div>
 
         <div className="mt-6">
-          {
-            itemsInfo.map((itemCategory) => {
-              return <RestaurantInfo key={itemCategory?.card?.card?.categoryId} resInfo={itemCategory} />
-            })
-          }
+          {itemsInfo.map((itemCategory) => (
+            <RestaurantInfo
+              key={itemCategory?.card?.card?.categoryId}
+              resInfo={itemCategory}
+            />
+          ))}
         </div>
       </div>
     </div>
